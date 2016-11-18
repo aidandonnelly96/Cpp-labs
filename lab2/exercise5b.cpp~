@@ -1,0 +1,43 @@
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include <string.h>
+
+using namespace std;
+
+int my_string_len(char str[]){
+	int n=0;
+	int i=0;
+	while(true){
+		if(str[i]=='\0'){
+			return i;
+			false;
+		}
+		else{
+			i++;
+		}
+	}
+}
+
+void my_string_cat(char dest[], char src[], int dest_size){
+	int j=0;
+	if(my_string_len(dest)+my_string_len(src)<dest_size){
+		dest+=src;
+		cout<<dest;
+	}
+	else{
+		cout<<"Doesn't fit";
+	}
+}
+
+int main(){
+	char s1[20]="Hello World";
+	char s2[]="Goodbye";
+	int s1len =my_string_len(s1);
+	int s2len=my_string_len(s2);
+	cout<<"String 1 length: "<<s1len<<"\n";
+	cout<<"String 2 length: "<<s2len<<"\n";
+	cout<<sizeof(s1)<<"\n";
+	my_string_cat(s1,s2,sizeof(s1));
+}
